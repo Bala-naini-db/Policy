@@ -1,4 +1,4 @@
 policy "vm_ExternalIP" {
-	source = "./vm_ExternalIP.sentinel"
+	source = "./RestrictExternalIpVM.Sentinel"
 	enforcement_level = "hard_mandatory"
 }
