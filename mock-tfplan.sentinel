@@ -1,0 +1,668 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"google_compute_address": {
+				"static": {
+					0: {
+						"applied": {
+							"address_type":  "EXTERNAL",
+							"description":   null,
+							"name":          "ipv4-address1",
+							"network":       null,
+							"prefix_length": null,
+							"timeouts":      null,
+						},
+						"destroy": false,
+						"diff": {
+							"address": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"address_type": {
+								"computed": false,
+								"new":      "EXTERNAL",
+								"old":      "",
+							},
+							"creation_timestamp": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "ipv4-address1",
+								"old":      "",
+							},
+							"network": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"network_tier": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"prefix_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"purpose": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"region": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnetwork": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"users.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_compute_instance": {
+				"example": {
+					0: {
+						"applied": {
+							"advanced_machine_features": [],
+							"allow_stopping_for_update": null,
+							"attached_disk":             [],
+							"boot_disk": [
+								{
+									"auto_delete":             true,
+									"disk_encryption_key_raw": "REDACTED_SENSITIVE",
+									"initialize_params": [
+										{
+											"image": "ubuntu-1604-lts",
+										},
+									],
+									"mode": "READ_WRITE",
+								},
+							],
+							"can_ip_forward":          false,
+							"deletion_protection":     false,
+							"description":             null,
+							"desired_status":          null,
+							"enable_display":          null,
+							"hostname":                null,
+							"labels":                  null,
+							"machine_type":            "f1-micro",
+							"metadata":                null,
+							"metadata_startup_script": null,
+							"name": "instance01",
+							"network_interface": [
+								{
+									"access_config":  [],
+									"alias_ip_range": [],
+									"nic_type":       null,
+								},
+							],
+							"resource_policies":        null,
+							"scratch_disk":             [],
+							"service_account":          [],
+							"shielded_instance_config": [],
+							"tags":     null,
+							"timeouts": null,
+							"zone":     "us-central1-a",
+						},
+						"destroy": false,
+						"diff": {
+							"advanced_machine_features.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"allow_stopping_for_update": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"attached_disk.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"boot_disk.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"boot_disk.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.auto_delete": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"boot_disk.0.device_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.disk_encryption_key_raw": {
+								"computed": false,
+								"new":      "REDACTED_SENSITIVE",
+								"old":      "",
+							},
+							"boot_disk.0.disk_encryption_key_sha256": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.0.image": {
+								"computed": false,
+								"new":      "ubuntu-1604-lts",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.0.labels": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.0.size": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.initialize_params.0.type": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.kms_key_self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_disk.0.mode": {
+								"computed": false,
+								"new":      "READ_WRITE",
+								"old":      "",
+							},
+							"boot_disk.0.source": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"can_ip_forward": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"confidential_instance_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cpu_platform": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"current_status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"deletion_protection": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"desired_status": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_display": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"guest_accelerator.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"hostname": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"label_fingerprint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"machine_type": {
+								"computed": false,
+								"new":      "f1-micro",
+								"old":      "",
+							},
+							"metadata": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata_fingerprint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata_startup_script": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"min_cpu_platform": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "instance01",
+								"old":      "",
+							},
+							"network_interface.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"network_interface.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.access_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"network_interface.0.alias_ip_range.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"network_interface.0.name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.network": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.network_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.nic_type": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.subnetwork": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface.0.subnetwork_project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"reservation_affinity.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"resource_policies": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"scheduling.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"scratch_disk.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"service_account.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"shielded_instance_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_fingerprint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"zone": {
+								"computed": false,
+								"new":      "us-central1-a",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_compute_network": {
+				"vpc": {
+					0: {
+						"applied": {
+							"auto_create_subnetworks":         false,
+							"delete_default_routes_on_create": false,
+							"description":                     null,
+							"name":                            "testvpc01",
+							"timeouts":                        null,
+						},
+						"destroy": false,
+						"diff": {
+							"auto_create_subnetworks": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"delete_default_routes_on_create": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"gateway_ipv4": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"mtu": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "testvpc01",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"routing_mode": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_compute_subnetwork": {
+				"subnet": {
+					0: {
+						"applied": {
+							"description":   null,
+							"ip_cidr_range": "10.12.0.0/24",
+							"log_config":    [],
+							"name":          "testsubnet01",
+							"private_ip_google_access": null,
+							"region":                   "us-central1",
+							"timeouts":                 null,
+						},
+						"destroy": false,
+						"diff": {
+							"creation_timestamp": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"fingerprint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"gateway_address": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_cidr_range": {
+								"computed": false,
+								"new":      "10.12.0.0/24",
+								"old":      "",
+							},
+							"log_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "testsubnet01",
+								"old":      "",
+							},
+							"network": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip_google_access": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ipv6_google_access": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"project": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"region": {
+								"computed": false,
+								"new":      "us-central1",
+								"old":      "",
+							},
+							"secondary_ip_range.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.0.3"
+
+variables = {
+	"region":           "us-central1",
+	"subnet_cidr":      "10.12.0.0/24",
+	"subnet_name":      "testsubnet01",
+	"vpc_name":         "testvpc01",
+	"vpc_network_name": "testnetwork",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources
